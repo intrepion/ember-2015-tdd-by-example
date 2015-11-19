@@ -2,6 +2,7 @@
   {{#each todo in unassigned}}
     <div class="cards">
       <span class="todo_project">{{todo.project}}</span>
+      <span class="todo_status">{{todo.status}}</span>
     </div>
   {{/each}}
 </div>
@@ -10,6 +11,7 @@
   {{#each todo in assigned}}
     <div class="cards">
       <span class="todo_project">{{todo.project}}</span>
+      <span class="todo_status">{{todo.status}}</span>
     </div>
   {{/each}}
 </div>
