@@ -13,3 +13,12 @@ test('visiting /assignment', function(assert) {
     assert.equal(project.text(), 'first');
   });
 });
+
+test('assigned items are grouped together', function(assert) {
+  visit('/');
+
+  andThen(function() {
+    var assigned = find('.assigned .cards');
+    assert.equal(assigned.length, 1);
+  });
+});
