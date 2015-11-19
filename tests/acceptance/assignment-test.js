@@ -5,7 +5,6 @@ moduleForAcceptance('Acceptance | assignment');
 
 test('visiting /assignment', function(assert) {
   visit('/');
-
   andThen(function() {
     var unassigned = find('.unassigned .cards');
     assert.equal(unassigned.length, 3);
@@ -16,11 +15,18 @@ test('visiting /assignment', function(assert) {
 
 test('assigned items are grouped together', function(assert) {
   visit('/');
-
   andThen(function() {
     var assigned = find('.assigned .cards');
     assert.equal(assigned.length, 1);
     var project = find('.assigned .cards:eq(0) .todo_project');
     assert.equal(project.text(), 'last');
+  });
+});
+
+test('status is shown in plain english', function(assert) {
+  visit('/');
+  andThen(function() {
+    var status = find('.assigned .cards:eq(0) .todo_status');
+    assert.equal(status.text(), 'Assigned');
   });
 });
