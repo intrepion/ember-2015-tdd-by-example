@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import Todo from 'app/models/todo';
+import Todo from 'ember-2015-tdd-by-example/models/todo';
 
 module('todo');
 
