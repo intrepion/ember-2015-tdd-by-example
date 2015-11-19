@@ -59,5 +59,7 @@ test('clicking toggle link will show details for given item', function(assert) {
     assert.equal(currentURL(), '/todo/1');
     var details = find('.details_section');
     assert.ok(!details.hasClass('hidden'));
+    var projectInput = find('.details_section input.project');
+    assert.equal(projectInput.val(), 'first');
   });
 });
